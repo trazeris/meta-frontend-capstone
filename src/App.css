@@ -1,0 +1,6 @@
+a:link {
+  transition: color .2s ease-out;
+}
+a:hover {
+  color: #F4CE14;
+}
