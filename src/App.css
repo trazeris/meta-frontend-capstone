@@ -4,3 +4,14 @@ a:link {
 a:hover {
   color: #F4CE14;
 }
+
+a.btn:link {
+  padding: 1rem;
+  background-color: #F4CE14;
+  border-radius: 16px;
+}
+
+a.btn:hover {
+  background-color: #EE9972;
+  color: #fff;
+}
