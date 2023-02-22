@@ -1,5 +1,5 @@
-import { NavigationLink } from '../../App';
 import PNGLogo from '../../assets/logo footer.png';
+import { NavigationLink } from '../../routes/Layout.route';
 
 import './Footer.styles.css';
 

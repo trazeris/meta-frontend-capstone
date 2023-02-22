@@ -1,5 +1,5 @@
-import { NavigationLink } from '../../App';
 import SVGLogo from '../../assets/Logo.svg';
+import { NavigationLink } from '../../routes/Layout.route';
 
 import './Header.styles.css';
 
