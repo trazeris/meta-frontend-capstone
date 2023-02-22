@@ -1,0 +1,27 @@
+.reservation-page {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.reservation-page form {
+  display: grid;
+  max-width: 200px;
+  gap: 1rem;
+}
+
+.input-group {
+  display: grid;
+  gap: .5rem;
+}
+
+.input-group.invalid input, .input-group.invalid select {
+  border-color: red;
+}
+
+.input-group span {
+  color: red;
+  font-size: 10pt;
+}
+
+@media screen and (min-width: 900px) {
+}

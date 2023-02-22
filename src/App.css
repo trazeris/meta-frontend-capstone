@@ -1,4 +1,4 @@
-a:link {
+a:link, input.btn {
   transition: color .2s ease-out;
 }
 a:hover {
@@ -10,13 +10,15 @@ a.btn {
   text-align: center;
 }
 
-a.btn:link {
+a.btn:link, input.btn {
   padding: 1rem 2rem;
   background-color: #F4CE14;
+  border-color: transparent;
   border-radius: 16px;
+  cursor: pointer;
 }
 
-a.btn:hover {
+a.btn:hover, input.btn:hover {
   background-color: #EE9972;
   color: #fff;
 }

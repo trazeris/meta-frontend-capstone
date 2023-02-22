@@ -13,12 +13,6 @@ body {
   margin: 0 auto;
 }
 
-input {
-  font-family: "karla", sans-serif;
-  font-size: 15px;
-  color: #333;
-}
-
 ::placeholder {
   color: #949494;
   opacity: 1; /* Firefox */
@@ -45,6 +39,14 @@ h3 {
 a {
   text-decoration: none;
   color: #333333;
+}
+
+input, select {
+  font-family: 'Karla', sans-serif;
+  font-size: 16pt;
+  border-radius: 6px;
+  border-width: 1px;
+  padding: .3rem .5rem;
 }
 
 @media screen and (min-width: 900px) {

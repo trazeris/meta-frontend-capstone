@@ -1,7 +1,9 @@
+import ReservationForm from '../components/ReservationForm/ReservationForm';
+
 function ReservationsPage() {
   return (
     <>
-      <h1>Reservations</h1>
+      <ReservationForm />
     </>
   );
 }
