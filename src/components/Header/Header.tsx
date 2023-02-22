@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import SVGLogo from '../../assets/Logo.svg';
 import { NavigationLink } from '../../routes/Layout.route';
 
@@ -21,7 +22,7 @@ function Header({ navigationLinks }: HeaderProps) {
         <ul>
           {navigationLinks.map((link) => (
             <li key={link.key}>
-              <a href={link.route}>{link.text}</a>
+              <Link to={link.route}>{link.text}</Link>
             </li>
           ))}
         </ul>

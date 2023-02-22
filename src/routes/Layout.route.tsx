@@ -12,7 +12,7 @@ const navigationLinks: NavigationLink[] = [
   {
     key: 'home',
     text: 'Home',
-    route: '#',
+    route: '/',
   },
   {
     key: 'about',
@@ -27,7 +27,7 @@ const navigationLinks: NavigationLink[] = [
   {
     key: 'book',
     text: 'Reservations',
-    route: '#',
+    route: '/reservations',
   },
   {
     key: 'order',
