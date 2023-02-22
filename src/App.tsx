@@ -3,7 +3,7 @@ import AboutUsSection from './components/AboutUsSection';
 import Footer from './components/Footer';
 import Header from './components/Header/Header';
 import HeroSection from './components/HeroSection/HeroSection';
-import SpecialsSection from './components/SpecialsSection';
+import SpecialsSection from './components/SpecialsSection/SpecialsSection';
 import TestimonialsSection from './components/TestimonialsSection';
 
 export interface NavigationLink {
@@ -54,7 +54,7 @@ function App() {
 
         <SpecialsSection />
 
-        <TestimonialsSection />
+        {/* <TestimonialsSection /> */}
 
         <AboutUsSection />
       </main>

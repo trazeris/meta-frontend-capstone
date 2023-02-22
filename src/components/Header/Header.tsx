@@ -9,7 +9,7 @@ interface HeaderProps {
 
 function Header({ navigationLinks }: HeaderProps) {
   return (
-    <header>
+    <header className="page-header">
       <img alt="Little Lemon Logo" src={SVGLogo} />
       <nav>
         <input type="checkbox" name="" id="" />

@@ -5,8 +5,13 @@ a:hover {
   color: #F4CE14;
 }
 
+a.btn {
+  display: block;
+  text-align: center;
+}
+
 a.btn:link {
-  padding: 1rem;
+  padding: 1rem 2rem;
   background-color: #F4CE14;
   border-radius: 16px;
 }

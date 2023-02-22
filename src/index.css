@@ -38,7 +38,8 @@ h2 {
 }
 
 h3 {
-  font-size: 14pt;
+  font-size: 18pt;
+  color: #000;
 }
 
 a {
@@ -56,6 +57,6 @@ a {
   }
 
   h3 {
-    font-size: 18pt;
+    font-size: 16pt;
   }
 }
