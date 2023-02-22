@@ -1,3 +1,8 @@
+import './AboutUs.styles.css';
+
+import JPGAdrian from '../../assets/adrian.jpg';
+import JPGMario from '../../assets/mario.jpg';
+
 function AboutUsSection() {
   return (
     <section className="about-us">
@@ -8,13 +13,12 @@ function AboutUsSection() {
         penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec
         quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla
         consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec,
-        vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis
-        vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer
-        tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate
-        eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae,
-        eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat
+        vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a.
       </p>
-      <img alt="the team" src="" />
+      <aside className="the-team">
+        <img alt="Adrian" src={JPGAdrian} />
+        <img alt="Mario" src={JPGMario} />
+      </aside>
     </section>
   );
 }

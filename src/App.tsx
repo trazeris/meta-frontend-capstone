@@ -1,10 +1,10 @@
 import './App.css';
-import AboutUsSection from './components/AboutUsSection';
+import AboutUsSection from './components/AboutUsSection/AboutUsSection';
 import Footer from './components/Footer';
 import Header from './components/Header/Header';
 import HeroSection from './components/HeroSection/HeroSection';
 import SpecialsSection from './components/SpecialsSection/SpecialsSection';
-import TestimonialsSection from './components/TestimonialsSection';
+import TestimonialsSection from './components/TestimonialsSection/TestimonialsSection';
 
 export interface NavigationLink {
   key: string;

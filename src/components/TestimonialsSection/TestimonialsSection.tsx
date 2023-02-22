@@ -1,3 +1,5 @@
+import './Testimonials.styles.css';
+
 function TestimonialsSection() {
   return (
     <section className="testimonials">
