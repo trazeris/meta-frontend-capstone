@@ -1,9 +1,21 @@
+import { Dispatch } from 'react';
 import ReservationForm from '../components/ReservationForm/ReservationForm';
 
-function ReservationsPage() {
+interface ReservationsPageProps {
+  availableTimes: string[];
+  dispatchSelectedDate: Dispatch<string>;
+}
+
+function ReservationsPage({
+  availableTimes,
+  dispatchSelectedDate,
+}: ReservationsPageProps) {
   return (
     <>
-      <ReservationForm />
+      <ReservationForm
+        availableTimes={availableTimes}
+        dispatchSelectedDate={dispatchSelectedDate}
+      />
     </>
   );
 }

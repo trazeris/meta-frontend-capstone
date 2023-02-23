@@ -3,7 +3,12 @@ import { FieldValues, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 
 import './ReservationForm.styles.css';
-import { useState } from 'react';
+import { Dispatch } from 'react';
+
+interface ReservationsFormProps {
+  availableTimes: string[];
+  dispatchSelectedDate: Dispatch<string>;
+}
 
 const schema = yup.object({
   name: yup.string().required('Full name is a required field!'),
@@ -17,19 +22,25 @@ const schema = yup.object({
   occasion: yup.string(),
 });
 
-function ReservationForm() {
+function ReservationForm({
+  availableTimes,
+  dispatchSelectedDate,
+}: ReservationsFormProps) {
   const {
     handleSubmit,
     register,
     formState: { errors },
+    getValues,
   } = useForm({
     resolver: yupResolver(schema),
   });
 
-  const [availableTimes, setAvailableTimes] = useState(['17:00', '18:00']);
-
   const formSubmit = (data: FieldValues) => {
     console.table(data);
+  };
+
+  const handleDateChange = () => {
+    dispatchSelectedDate(getValues('date'));
   };
 
   return (
@@ -54,7 +65,13 @@ function ReservationForm() {
 
         <div className={`input-group ${errors?.date && 'invalid'}`}>
           <label htmlFor="res-date">Choose date*</label>
-          <input type="date" id="res-date" {...register('date')} />
+          <input
+            type="date"
+            id="res-date"
+            {...register('date', {
+              onChange: handleDateChange,
+            })}
+          />
           {errors?.date && (
             <span role="alert">{errors.date.message?.toString()}</span>
           )}
