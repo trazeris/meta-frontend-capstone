@@ -12,7 +12,7 @@ interface ReservationsFormProps {
 }
 
 const schema = yup.object({
-  name: yup.string().required('Full name is a required field!'),
+  name: yup.string().required('Name is required'),
   email: yup.string().required('Email is required').email('Invalid email'),
   guests: yup
     .number()
@@ -31,10 +31,11 @@ function ReservationForm({
   const {
     handleSubmit,
     register,
-    formState: { errors },
+    formState: { errors, isDirty, isValid },
     getValues,
   } = useForm({
     resolver: yupResolver(schema),
+    mode: 'onBlur',
   });
 
   const formSubmit = (data: FieldValues) => {
@@ -48,6 +49,7 @@ function ReservationForm({
   return (
     <section className="reservation-page">
       <h1>Reservation</h1>
+
       <form onSubmit={handleSubmit(formSubmit)} noValidate={true}>
         <div className={`input-group ${errors?.name && 'invalid'}`}>
           <label htmlFor="res-name">Your name*</label>
@@ -110,7 +112,12 @@ function ReservationForm({
           )}
         </div>
 
-        <input className="btn" type="submit" value="Make your reservation" />
+        <input
+          className="btn"
+          type="submit"
+          value="Make your reservation"
+          disabled={!isDirty || !isValid}
+        />
       </form>
     </section>
   );
