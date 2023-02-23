@@ -1,10 +1,12 @@
 import { Reducer, useEffect, useReducer } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { FieldValues } from 'react-hook-form';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import './App.css';
 import Homepage from './routes/Homepage.route';
 import Layout from './routes/Layout.route';
+import ReservationConfirmedPage from './routes/ReservationConfirmedPage.route';
 import ReservationsPage from './routes/ReservationsPage.route';
-import { fetchAPI } from './utils/api';
+import { fetchAPI, submitAPI } from './utils/api';
 
 export interface UpdateAvailableTimesAction {
   type: string;
@@ -37,6 +39,7 @@ const initialState: TimesState = {
 
 function App() {
   const [timesState, dispatch] = useReducer(updateTimes, initialState);
+  const navigate = useNavigate();
 
   const dispatchSelectedDate = (newDate: string) => {
     dispatch({ type: 'UPDATE_FOR_DATE', payload: newDate });
@@ -46,6 +49,12 @@ function App() {
     const availableTimesInit = fetchAPI(new Date());
     dispatch({ type: 'INIT', payload: availableTimesInit });
   }, []);
+
+  const submitForm = (formData: FieldValues) => {
+    if (submitAPI(formData)) {
+      navigate('/reservation-confirmed');
+    }
+  };
 
   return (
     <>
@@ -58,8 +67,12 @@ function App() {
               <ReservationsPage
                 availableTimes={timesState.availableTimes}
                 dispatchSelectedDate={dispatchSelectedDate}
+                handleFormSubmit={submitForm}
               />
             }></Route>
+          <Route
+            path="/reservation-confirmed"
+            element={<ReservationConfirmedPage />}></Route>
         </Route>
       </Routes>
     </>

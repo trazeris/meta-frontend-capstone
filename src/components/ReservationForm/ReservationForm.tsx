@@ -8,6 +8,7 @@ import { Dispatch } from 'react';
 interface ReservationsFormProps {
   availableTimes: string[];
   dispatchSelectedDate: Dispatch<string>;
+  handleFormSubmit: (data: FieldValues) => void;
 }
 
 const schema = yup.object({
@@ -25,6 +26,7 @@ const schema = yup.object({
 function ReservationForm({
   availableTimes,
   dispatchSelectedDate,
+  handleFormSubmit,
 }: ReservationsFormProps) {
   const {
     handleSubmit,
@@ -36,7 +38,7 @@ function ReservationForm({
   });
 
   const formSubmit = (data: FieldValues) => {
-    console.table(data);
+    handleFormSubmit(data);
   };
 
   const handleDateChange = () => {
