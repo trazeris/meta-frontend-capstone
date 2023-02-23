@@ -53,7 +53,7 @@ function ReservationForm({
       <form onSubmit={handleSubmit(formSubmit)} noValidate={true}>
         <div className={`input-group ${errors?.name && 'invalid'}`}>
           <label htmlFor="res-name">Your name*</label>
-          <input type="string" id="res-name" {...register('name')} />
+          <input type="text" id="res-name" {...register('name')} />
           {errors?.name && (
             <span role="alert">{errors.name.message?.toString()}</span>
           )}
